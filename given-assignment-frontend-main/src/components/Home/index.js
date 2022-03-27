@@ -1,11 +1,13 @@
 import React, { useState, Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Loader from "react-loader-spinner";
+
 import Cookie from "js-cookie";
 import Header from "../Header";
 import "./index.css";
 
 class Home extends Component {
-  state = { uploadedFileData: [], fetchedDataUsers: [] };
+  state = { uploadedFileData: [], fetchedDataUsers: [], isLoading: false };
 
   componentDidMount() {
     this.onGetUsersData();
@@ -43,6 +45,9 @@ class Home extends Component {
 
   onSubmitUploadedFile = async (event) => {
     event.preventDefault();
+    this.setState({
+      isLoading: true,
+    });
     const { uploadedFileData } = this.state;
     console.log(uploadedFileData);
     const fileData = { uploadedFileData };
@@ -78,7 +83,14 @@ class Home extends Component {
     );
   };
 
+  renderLoader = () => (
+    <div className="products-loader-container">
+      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    </div>
+  );
+
   render() {
+    const { isLoading } = this.state;
     return (
       <>
         <Header />
@@ -92,10 +104,10 @@ class Home extends Component {
               accept="application/json"
             />
             <button type="submit" className="save-button">
-              Save
+              Upload
             </button>
           </form>
-          {this.onShowFetchedUsersData()}
+          {isLoading ? this.onShowFetchedUsersData() : null}
         </div>
       </>
     );
