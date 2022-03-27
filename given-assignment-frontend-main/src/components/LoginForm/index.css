@@ -1,5 +1,5 @@
 .login-container {
-  background-color: #000000;
+  background-color: #52606d;
   height: 100vh;
   padding-top: 30px;
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 .login-form-container {
-  background-color: #272727;
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 40px;
   width: 40%;
@@ -23,7 +23,7 @@
 }
 
 .form-label {
-  color: #ffffff;
+  color: #000;
   font-weight: 500;
   font-size: 20px;
   font-family: "Roboto";
@@ -32,7 +32,7 @@
 .form-input {
   border-radius: 5px;
   border: 1px solid #7e858e;
-  color: #ffffff;
+  color: #000;
   width: 100%;
   height: 40px;
   background-color: transparent;
@@ -42,7 +42,7 @@
 
 .form-submit-button {
   color: #ffffff;
-  background-color: #6366f1;
+  background-color: #24a0ed;
   border: 0;
   border-radius: 5px;
   width: 100%;
